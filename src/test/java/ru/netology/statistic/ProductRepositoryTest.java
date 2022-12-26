@@ -24,7 +24,9 @@ class ProductRepositoryTest {
     void remove() {
         repository.remove(0);
         assertEquals(1, repository.findAll().size());
-        repository.remove(1);
-        assertEquals(0, repository.findAll().size());
+        repository.insert(new Product(2,"",1.0f));
+        repository.insert(new Product(3,"",1.0f));
+        repository.remove(2);
+        assertEquals(2, repository.findAll().size());
     }
 }
